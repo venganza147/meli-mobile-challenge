@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -101,7 +101,6 @@
 				2FB9DC8102DBFE72A5A010DC /* Pods-meli-mobile-challengeTests.debug.xcconfig */,
 				5A463A7BD3E4F7CBDF63E2E3 /* Pods-meli-mobile-challengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,13 +139,11 @@
 		748D93E325618D7E00BD59E4 /* meli-mobile-challenge */ = {
 			isa = PBXGroup;
 			children = (
-				748D93E425618D7E00BD59E4 /* AppDelegate.swift */,
-				748D93E625618D7E00BD59E4 /* SceneDelegate.swift */,
-				748D93E825618D7E00BD59E4 /* ViewController.swift */,
-				748D93EA25618D7E00BD59E4 /* Main.storyboard */,
-				748D93ED25618D8100BD59E4 /* Assets.xcassets */,
-				748D93EF25618D8100BD59E4 /* LaunchScreen.storyboard */,
-				748D93F225618D8100BD59E4 /* Info.plist */,
+				748D94B22561967100BD59E4 /* App */,
+				748D94B42561968B00BD59E4 /* Resources */,
+				748D94B5256196B700BD59E4 /* Services */,
+				748D94B6256196C300BD59E4 /* Supporting File */,
+				748D94B7256196D200BD59E4 /* Utils */,
 			);
 			path = "meli-mobile-challenge";
 			sourceTree = "<group>";
@@ -169,6 +166,48 @@
 			path = "meli-mobile-challengeUITests";
 			sourceTree = "<group>";
 		};
+		748D94B22561967100BD59E4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				748D93E825618D7E00BD59E4 /* ViewController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		748D94B42561968B00BD59E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				748D93ED25618D8100BD59E4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		748D94B5256196B700BD59E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		748D94B6256196C300BD59E4 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				748D93EA25618D7E00BD59E4 /* Main.storyboard */,
+				748D93EF25618D8100BD59E4 /* LaunchScreen.storyboard */,
+				748D93E425618D7E00BD59E4 /* AppDelegate.swift */,
+				748D93E625618D7E00BD59E4 /* SceneDelegate.swift */,
+				748D93F225618D8100BD59E4 /* Info.plist */,
+			);
+			path = "Supporting File";
+			sourceTree = "<group>";
+		};
+		748D94B7256196D200BD59E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +219,7 @@
 				748D93DD25618D7E00BD59E4 /* Sources */,
 				748D93DE25618D7E00BD59E4 /* Frameworks */,
 				748D93DF25618D7E00BD59E4 /* Resources */,
+				CEDA0C3A427A001773D7BB17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +257,7 @@
 				748D93FE25618D8100BD59E4 /* Sources */,
 				748D93FF25618D8100BD59E4 /* Frameworks */,
 				748D940025618D8100BD59E4 /* Resources */,
+				971AE9753A53CF46ED22BFD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,6 +361,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		971AE9753A53CF46ED22BFD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-meli-mobile-challenge-meli-mobile-challengeUITests/Pods-meli-mobile-challenge-meli-mobile-challengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-meli-mobile-challenge-meli-mobile-challengeUITests/Pods-meli-mobile-challenge-meli-mobile-challengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meli-mobile-challenge-meli-mobile-challengeUITests/Pods-meli-mobile-challenge-meli-mobile-challengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		98F5EBFB4FACC05F026E968E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +420,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEDA0C3A427A001773D7BB17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-meli-mobile-challenge/Pods-meli-mobile-challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-meli-mobile-challenge/Pods-meli-mobile-challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meli-mobile-challenge/Pods-meli-mobile-challenge-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
