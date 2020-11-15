@@ -1,0 +1,32 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+def base_pods
+    # Pods for meli-mobile-challenge
+    pod 'Moya/RxSwift'
+    pod 'RxCocoa'
+    pod 'RxCodable'
+    pod 'RxDataSources'
+    pod 'IQKeyboardManagerSwift'
+    pod 'R.swift'
+    pod 'Validator'
+    pod 'Kingfisher'
+end
+
+target 'meli-mobile-challenge' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  base_pods
+
+  # Pods for meli-mobile-challenge
+
+  target 'meli-mobile-challengeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'meli-mobile-challengeUITests' do
+    # Pods for testing
+  end
+
+end
