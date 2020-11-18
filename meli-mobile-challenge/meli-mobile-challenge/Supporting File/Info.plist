@@ -62,5 +62,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>CONFIG</key>
+    <dict>
+        <key>API_URL</key>
+        <string>$(API_URL)</string>
+    </dict>
+    <key>UIAppFonts</key>
+    <array>
+        <string>Harabara Mais Demo.otf</string>
+    </array>
 </dict>
 </plist>

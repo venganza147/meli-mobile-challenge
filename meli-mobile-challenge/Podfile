@@ -11,6 +11,8 @@ def base_pods
     pod 'R.swift'
     pod 'Validator'
     pod 'Kingfisher'
+    pod 'NVActivityIndicatorView'
+    pod 'SnapKit', '~> 5.0.0'
 end
 
 target 'meli-mobile-challenge' do
