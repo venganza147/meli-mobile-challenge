@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UILabel {
-
+    
     func navigationTitleLabel(){
         
         let attributedString = NSMutableAttributedString(string: self.text ?? "Mercado Libre")
@@ -22,5 +22,4 @@ extension UILabel {
         self.attributedText = attributedString
         
     }
-    
 }

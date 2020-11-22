@@ -59,12 +59,12 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate {
     let screenSize              = UIScreen.main.bounds
     var titleLabel              : UILabel!
     var subTileButton           = UIButton(type: .custom)
-
+    
     private var disposeBag = DisposeBag()
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigatorBar(title: "Mercado Libre")
         self.registerNib()
         self.setup()
@@ -84,11 +84,11 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate {
     func registerNib(){}
     @objc dynamic func bindData(){}
     @objc dynamic func subscriptionData(){}
-        //Child Model
-        
+    //Child Model
+    
     func navigatorBar(title:String, subtitle:String?=nil){
         //background in navbar
-
+        
         self.navigationController?.navigationBar.backgroundColor = R.color.yelowMeli()
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.gray.cgColor
@@ -100,11 +100,6 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate {
         self.configNavigationBar()
         
         self.setNavigation(title: title, subtitle: subtitle)
-
-    }
-    
-    @objc func goBack(){
-        self.navigationController?.popViewController(animated: true)
     }
     
     func setNavigation(title:String, subtitle:String?){
@@ -124,9 +119,8 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate {
         //title view
         let view = UIView.init(frame:CGRect(x: 0, y: 0, width: Helper.size(size: 240) , height:Helper.size(size:64)))
         view.widthAnchor.constraint(equalToConstant: Helper.size(size: 240)).isActive = true
-       
-        //title Label
         
+        //title Label
         titleLabel = UILabel.init(frame:CGRect(x: 0, y: 0, width: 200 , height:20))
         titleLabel.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 18.0).isActive = true
@@ -149,10 +143,10 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         if #available(iOS 12.0, *) {
-        view.addSubview(stackView)
-        navigationItem.titleView = view
+            view.addSubview(stackView)
+            navigationItem.titleView = view
         }else{
-         navigationItem.titleView = stackView
+            navigationItem.titleView = stackView
         }
     }
 }

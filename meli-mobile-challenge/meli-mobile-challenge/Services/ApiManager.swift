@@ -18,7 +18,6 @@ let defaultManager: Alamofire.Session = {
     return Session(configuration: configuration, serverTrustManager: manager)
 }()
 
-
 let ApiProvider = MoyaProvider<Api>(session: defaultManager)
 var disposeBag = DisposeBag()
 private let allowedDiskSize = 100 * 1024 * 1024
@@ -57,7 +56,6 @@ extension Api {
                         
                         switch response.statusCode{
                         case 200...299:
-                            print("response",try? response.mapJSON())
                             print("responde el servicio",endpoint)
                             if canCache(endpoint: endpoint) {
                                 let cachedData = CachedURLResponse(response: response.response!, data: response.data)
@@ -72,14 +70,14 @@ extension Api {
                                 observer.onCompleted()
                             }else {
                                 Helper.removeLoadingForError()
+                                observer.onCompleted()
                                 print("JSONDecoder Model error")
                             }
                             
                         default:
                             Helper.removeLoadingForError()
-                            print("error",try? response.mapJSON())
                             let errorMap : ErrorModel? = try? response.map(ErrorModel.self)
-                            var error = NSError(domain: errorMap?.message ?? "Server Error", code: response.statusCode, userInfo: nil)
+                            let error = NSError(domain: errorMap?.message ?? "Server Error", code: response.statusCode, userInfo: nil)
                             
                             if error.code == 401 {
                                 Helper.shared.showAlertWithHandler("Session Expired", message: "Your session is expired, please login again")
@@ -115,8 +113,6 @@ extension Api {
         :
             let url = endpoint.baseURL.absoluteString + endpoint.path
             return cache.cachedResponse(for: URLRequest(url: URL(string: url)!))
-        default:
-            return nil
         }
     }
     
@@ -127,8 +123,6 @@ extension Api {
              .searchItems
         :
             return true
-        default:
-            return  false
         }
     }
     

@@ -44,15 +44,6 @@ public class Helper {
         UIApplication.shared.keyWindow?.rootViewController?.getTopMostViewController()?.present(alertController, animated: true, completion: nil)
         
     }
-
-    static func changeDateFormatWithDateString(dateString:String,format:String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let originalDate = dateFormatter.date(from: dateString) ?? Date()
-        dateFormatter.dateFormat = format
-        let formattedDateString = dateFormatter.string(from: originalDate)
-        return formattedDateString
-    }
     
     static func removeLoadingForError() {
         let loadings = UIApplication.shared.keyWindow?.rootViewController?.getTopMostViewController()?.view.subviews.filter{$0 is NVActivityIndicatorView}
@@ -67,63 +58,19 @@ public class Helper {
             return size2
         }
         //Device width
-        let deviceWidth : CGFloat = screenWidth
+        let deviceWidth : CGFloat = UIScreen.main.bounds.size.width
         //375 is the base where the disign was made
         let newPropotion : CGFloat = (deviceWidth * (size / 375))
         //return the proportion
         return newPropotion
     }
     
-    
-    static func getProportionalSize(size:CGFloat,proportion:CGFloat)->CGFloat{
-        
-        let newPropotion : CGFloat = (size * proportion) /  contentScale
-        //return the proportion
-        return Helper.isSmallIphone() ? (newPropotion * 0.8) : (newPropotion * 0.9)
-    }
-    
-    static func getProportionalSizeForLayout(size:CGFloat,proportion:CGFloat)->CGFloat{
-        
-        let newPropotion : CGFloat = (size * proportion) /  layoutScale
-        //return the proportion
-        return newPropotion
-    }
-    
     static func isIpad()->Bool{
         return (UIDevice.current.userInterfaceIdiom == .pad)
-        
     }
     
     static func isSmallIphone()->Bool{
         return (UIScreen.main.bounds.size.height <= 568.0)
     }
     
-    /// implement label in bottom of view  with number version and build
-    static func getVersionAndBuild(viewMain:UIView){
-        let versionString: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-        let BuildString: String = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
-        let versionLabel = UILabel()
-        versionLabel.text = "\(versionString)(\(BuildString))"
-        versionLabel.translatesAutoresizingMaskIntoConstraints = false
-        viewMain.addSubview(versionLabel)
-        
-        versionLabel.centerXAnchor.constraint(equalTo: viewMain.centerXAnchor).isActive = true
-        versionLabel.bottomAnchor.constraint(equalTo: viewMain.bottomAnchor, constant: -16).isActive = true
-        
-    }
-
 }
-
-extension String{
-    func matchesRegex(regex: String!, text: String!) -> Bool {
-        do {
-            let regex = try NSRegularExpression(pattern: regex, options: [.caseInsensitive])
-            let nsString = text as NSString
-            let match = regex.firstMatch(in: text, options: [], range: NSMakeRange(0, nsString.length))
-            return (match != nil)
-        } catch {
-            return false
-        }
-    }
-}
-

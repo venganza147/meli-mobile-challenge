@@ -20,7 +20,7 @@ extension Api: TargetType {
     
     var path: String {
         switch self {
-
+        
         case .searchItems:
             return "/sites/MLC/search"
         case .fetchItem:

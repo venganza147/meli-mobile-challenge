@@ -62,5 +62,4 @@ class DetailViewModel {
                 return result
             })
     }
-    
 }

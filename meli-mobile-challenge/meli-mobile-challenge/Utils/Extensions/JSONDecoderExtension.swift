@@ -50,6 +50,4 @@ public extension JSONDecoder {
         return try self.decode(ModelResponse<T>.self, from: data).model
     }
     
-    
 }
-

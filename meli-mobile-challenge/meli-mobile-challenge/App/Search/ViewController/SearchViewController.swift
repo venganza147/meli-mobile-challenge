@@ -17,14 +17,13 @@ class SearchViewController: BaseViewController {
     
     var list = BehaviorRelay<[SearchItemModel]>(value: [])
     var searchViewModel = SearchViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         /* Setup delegates */
         tableView.delegate = self
         searchBar.delegate = self
-        
     }
     
     override func registerNib() {
@@ -51,15 +50,12 @@ class SearchViewController: BaseViewController {
             return cell
         }
         .disposed(by: disposeBag)
-        
     }
     
     override func subscriptionData() {
-
         self.searchViewModel.responseAllList.subscribe(onNext: { (products) in
             self.list.accept(products.results ?? [])
         }).disposed(by: disposeBag)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,15 +63,12 @@ class SearchViewController: BaseViewController {
             detaillViewController.productId = searchItemModel.id
         }
     }
-
 }
 
 extension SearchViewController: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchViewModel.getAllProducts.onNext(searchText)
     }
-    
 }
 
 extension SearchViewController: UITableViewDelegate {
