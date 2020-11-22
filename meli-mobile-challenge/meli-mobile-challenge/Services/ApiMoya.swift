@@ -22,7 +22,7 @@ extension Api: TargetType {
         switch self {
 
         case .searchItems:
-            return "/sites/MLA/search"
+            return "/sites/MLC/search"
         case .fetchItem:
             return "/items"
         case .fetchDescription(let productId):

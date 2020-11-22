@@ -12,7 +12,7 @@ import Alamofire
 import Moya
 
 let defaultManager: Alamofire.Session = {
-    let manager = ServerTrustManager(evaluators: ["191.132.202.108": DisabledTrustEvaluator()])
+    let manager = ServerTrustManager(allHostsMustBeEvaluated: false, evaluators: ["191.132.202.108": DisabledTrustEvaluator()])
     let configuration = URLSessionConfiguration.af.default
     
     return Session(configuration: configuration, serverTrustManager: manager)
@@ -94,7 +94,7 @@ extension Api {
                     case let .error(error):
                         print(error)
                         Helper.removeLoadingForError()
-                        AlertHelper.alert(message: "Request Time out", alertImage : .warning)
+                        Helper.shared.showAlertWithHandler("", message: "Request Time out")
                         NVActivityIndicatorPresenter
                             .sharedInstance
                             .stopAnimating(NVActivityIndicatorView.DEFAULT_FADE_OUT_ANIMATION)
