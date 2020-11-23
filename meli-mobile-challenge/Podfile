@@ -3,14 +3,14 @@
 
 def base_pods
     # Pods for meli-mobile-challenge
-    pod 'Moya/RxSwift'
-    pod 'RxCocoa'
-    pod 'RxCodable'
-    pod 'RxDataSources'
-    pod 'IQKeyboardManagerSwift'
-    pod 'R.swift'
-    pod 'Kingfisher'
-    pod 'NVActivityIndicatorView'
+    pod 'Moya/RxSwift', '~> 14.0.0'
+    pod 'RxCocoa', '~> 5.1.1'
+    pod 'RxCodable', '~> 1.0.0'
+    pod 'RxDataSources', '~> 4.0.1'
+    pod 'IQKeyboardManagerSwift', '~> 6.5.5'
+    pod 'R.swift', '~> 5.2.2'
+    pod 'Kingfisher', '~> 5.14.0'
+    pod 'NVActivityIndicatorView', '~> 4.8.0'
 end
 
 target 'meli-mobile-challenge' do
