@@ -21,9 +21,11 @@ Se usó como arquitectura de proyecto MVVM, en particular con un enfoque reactiv
 - **Kingfisher** -> Todo lo relacion con la descarga y almacenamiento en cache de las imagenes.
 - **NVActivityIndicatorView** -> Es una colección de impresionantes animaciones de carga.
 
-# Instalacion
+# Instalación
+- Clonar el repositorio.
 - Abrir el terminal.
 - Ir a la raiz del proyecto.
 - Ejecutar el comando 'pod install'.
 - Abrir el archivo 'meli-mobile-challenge.xcworkspace'.
-- Ejecutar el proyecto.
+- Insertar el archivo R.generated dentro de la carperta 'Suporting File' en Xcode como una refencia del original.
+- Ejecutar la aplicación.
