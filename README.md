@@ -29,3 +29,8 @@ Se usó como arquitectura de proyecto MVVM, en particular con un enfoque reactiv
 - Abrir el archivo 'meli-mobile-challenge.xcworkspace'.
 - Insertar el archivo R.generated dentro de la carperta 'Suporting File' en Xcode como una refencia del original.
 - Ejecutar la aplicación.
+
+# Vistas
+![Screen_1](https://github.com/venganza147/meli-mobile-challenge/blob/main/meli-mobile-challenge/img/Screen_1.png)
+![Screen_2](https://github.com/venganza147/meli-mobile-challenge/blob/main/meli-mobile-challenge/img/Screen_2.png)
+
