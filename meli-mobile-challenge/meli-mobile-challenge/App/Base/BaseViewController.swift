@@ -65,7 +65,7 @@ class BaseViewController: UIViewController,UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigatorBar(title: "Mercado Libre")
+        self.navigatorBar(title: "Mercado Libre", subtitle: "Challenge")
         self.registerNib()
         self.setup()
         self.bindData()
